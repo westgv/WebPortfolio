@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/paginas/portfolio.dart';
+import 'package:flutter_application_1/paginas/home.page.dart';
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,12 +10,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
       title: 'Westermann Portfolio',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const Portfolio(title: 'Flutter Demo Home Page'),
+      home: const HomePage(),
     );
   }
 }
