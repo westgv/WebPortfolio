@@ -1,16 +1,9 @@
-# flutter_application_1
+# My Web Portfolio
 
-A new Flutter project.
+A Web Portfolio developed in flutter.
 
-## Getting Started
+## Descrição
 
-This project is a starting point for a Flutter application.
+Preciso escrever ainda <3
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
