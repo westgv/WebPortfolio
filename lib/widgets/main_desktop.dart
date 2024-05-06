@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/ebuttons_home.dart';
 
 import '../constants/colors.dart';
 
@@ -14,7 +15,7 @@ class MainDesktop extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       height: screenHeight /1.2,
-      constraints: const BoxConstraints(minHeight: 350.0,),
+      constraints: const BoxConstraints(minHeight: 350.0, maxWidth: 300),
       child:  Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -26,37 +27,25 @@ class MainDesktop extends StatelessWidget {
                 textAlign: TextAlign.justify,
                 text: const TextSpan(
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 80,
                     height: 1.5,
                     fontWeight: FontWeight.bold,
                     color: CustomColor.whitePrimary, 
                     
                   ),
                   children: <TextSpan>[
-                    TextSpan(text: 'Hello,\n', style: TextStyle(fontSize: 35)),
-                    TextSpan(text: 'Welcome to my web\n'),
-                    TextSpan(text: 'portfolio, I am currently a\n'),
-                    TextSpan(text: 'Computer Science student\n'),
-                    TextSpan(text: 'at Instituto Mauá de\n'),
-                    TextSpan(text: 'Tecnologia, expected to be\n'),
-                    TextSpan(text: 'completed in dez/2027'),
+                    TextSpan(text: 'print("Gustavo Westermann")\n', style: TextStyle(fontSize: 15, color: CustomColor.yellowPrimary)),
+                    TextSpan(text: 'Gustavo\n'),
+                    TextSpan(text: 'Westermann'),
+                   
                   ],
                 ),
               ),
-              const SizedBox(height: 15,),
-              SizedBox(
-                width: 240,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: CustomColor.yellowPrimary
-                  ),
-                  onPressed: () {},
-                  
-                  child: const Text("Download CV", style: TextStyle(
-                    color: CustomColor.scaffoldBg,
-                  )),
-                ),
-              ),
+              const SizedBox(height: 10,),
+              const EbuttonHome(),
+              
+                
+              
             ],
           ),
           Container(
@@ -68,7 +57,7 @@ class MainDesktop extends StatelessWidget {
                   blurRadius: 284.95, // Raio de desfoque da sombra
                   offset: Offset(0, 3), // Deslocamento da sombra (horizontal, vertical)
                 )
-              ]
+              ],
             ),
             child: Image.asset("assets/ImageCircle.png",
             width: screenWidth / 3,),

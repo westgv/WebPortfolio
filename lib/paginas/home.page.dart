@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/about_desktop.dart';
 import 'package:flutter_application_1/widgets/main_desktop.dart';
 import '../constants/colors.dart';
 import '../constants/size.dart';
@@ -18,8 +19,8 @@ class _HomePageState extends State<HomePage> {
   final scaffoldKey=GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    final screenWidth = screenSize.width;
+    
+    
 
 
     return LayoutBuilder(
@@ -46,11 +47,7 @@ class _HomePageState extends State<HomePage> {
 
 
               // SKILLS
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey,
-              ),
+              const AboutMeDesktop(),
               // PROJECTS
               Container(
                 height: 500,
