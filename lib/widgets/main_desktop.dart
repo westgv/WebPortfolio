@@ -14,12 +14,11 @@ class MainDesktop extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
-      height: screenHeight /1.2,
+      height: screenHeight / 1.2,
       constraints: const BoxConstraints(minHeight: 350.0, maxWidth: 300),
-      child:  Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -30,22 +29,22 @@ class MainDesktop extends StatelessWidget {
                     fontSize: 80,
                     height: 1.5,
                     fontWeight: FontWeight.bold,
-                    color: CustomColor.whitePrimary, 
-                    
+                    color: CustomColor.whitePrimary,
                   ),
                   children: <TextSpan>[
-                    TextSpan(text: 'print("Gustavo Westermann")\n', style: TextStyle(fontSize: 15, color: CustomColor.yellowPrimary)),
+                    TextSpan(
+                        text: 'print("Gustavo Westermann")\n',
+                        style: TextStyle(
+                            fontSize: 15, color: CustomColor.yellowPrimary)),
                     TextSpan(text: 'Gustavo\n'),
                     TextSpan(text: 'Westermann'),
-                   
                   ],
                 ),
               ),
-              const SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               const EbuttonHome(),
-              
-                
-              
             ],
           ),
           Container(
@@ -55,12 +54,15 @@ class MainDesktop extends StatelessWidget {
                   color: CustomColor.whiteSecondary, // Cor da sombra
                   spreadRadius: 5, // Raio de propagação da sombra
                   blurRadius: 284.95, // Raio de desfoque da sombra
-                  offset: Offset(0, 3), // Deslocamento da sombra (horizontal, vertical)
+                  offset: Offset(
+                      0, 3), // Deslocamento da sombra (horizontal, vertical)
                 )
               ],
             ),
-            child: Image.asset("assets/ImageCircle.png",
-            width: screenWidth / 3,),
+            child: Image.asset(
+              "assets/ImageCircle.png",
+              width: screenWidth / 3,
+            ),
           ),
         ],
       ),
