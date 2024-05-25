@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
 
-class AboutMeDesktop extends StatelessWidget {
-  const AboutMeDesktop({super.key});
+class AboutMeMobile extends StatelessWidget {
+  const AboutMeMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,8 @@ class AboutMeDesktop extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
-      height: screenHeight / 2,
+      height: screenHeight / 3,
+      
       constraints: const BoxConstraints(minHeight: 350.0, maxWidth: 300),
       
       width: double.maxFinite,
@@ -21,25 +22,26 @@ class AboutMeDesktop extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(8.0),
           child: Column(
-            
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
+                    
                     child: Row(
                       
                       children: [
-                        
                         Text(
                           'Hello ',
-                          style: TextStyle(fontSize: 60,),
+                          style: TextStyle(fontSize: 40,
+                          fontWeight: FontWeight.w600),
+                          
                         ),
                         Icon(
                           Icons.waving_hand_rounded,
                           color: CustomColor.yellowPrimary,
-                          size: 50,
+                          size: 30,
                         )
                       ],
                     ),
@@ -50,7 +52,7 @@ class AboutMeDesktop extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const Row(
+              const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -59,7 +61,7 @@ class AboutMeDesktop extends StatelessWidget {
                     child: Text(
                       'Welcome to my web portfolio, I am currently a Computer Science student at Instituto Mauá de Tecnologia, expected to be completed in dez/2027\n',
                       textAlign: TextAlign.justify,
-                      style: TextStyle(fontSize: 25),
+                      style: TextStyle(fontSize: 15),
                     ),
                   ),
                   SizedBox(
@@ -70,7 +72,7 @@ class AboutMeDesktop extends StatelessWidget {
                     child: Text(
                       'I am a technology enthusiast willing to showcase creativity and efficiency in my works',
                       textAlign: TextAlign.justify,
-                      style: TextStyle(fontSize: 25),
+                      style: TextStyle(fontSize: 15),
                     ),
                   ),
                 ],
@@ -80,7 +82,10 @@ class AboutMeDesktop extends StatelessWidget {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                  
+                  shadowColor: Colors.white,
                   shape: RoundedRectangleBorder(
+                    
                       borderRadius: BorderRadius.circular(20)),
                   backgroundColor: CustomColor.yellowPrimary,
                 ),

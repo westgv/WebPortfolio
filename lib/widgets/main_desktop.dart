@@ -51,17 +51,17 @@ class MainDesktop extends StatelessWidget {
             decoration: const BoxDecoration(
               boxShadow: [
                 BoxShadow(
-                  color: CustomColor.whiteSecondary, // Cor da sombra
+                  color: Color.fromARGB(122, 200, 201, 206), // Cor da sombra
                   spreadRadius: 5, // Raio de propagação da sombra
-                  blurRadius: 284.95, // Raio de desfoque da sombra
+                  blurRadius: 224.95, // Raio de desfoque da sombra
                   offset: Offset(
                       0, 3), // Deslocamento da sombra (horizontal, vertical)
                 )
               ],
             ),
             child: Image.asset(
-              "assets/ImageCircle.png",
-              width: screenWidth / 3,
+              "assets/bola_main.png",
+              width: screenWidth / 2.5,
             ),
           ),
         ],
