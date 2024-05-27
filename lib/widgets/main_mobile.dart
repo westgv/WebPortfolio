@@ -22,7 +22,7 @@ class _MainMobileState extends State<MainMobile> {
     return LayoutBuilder(builder: (context, constraints){
       return Container(
         margin: const EdgeInsets.symmetric(horizontal: 20),
-        height: screenHeight / 2,
+        height: screenHeight / 2.5,
         constraints: const BoxConstraints(minHeight: 350.0, maxWidth: 300),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

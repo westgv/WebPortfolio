@@ -13,17 +13,18 @@ class AboutMeDesktop extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
-      height: screenHeight / 2,
+      height: screenHeight / 1.6,
       constraints: const BoxConstraints(minHeight: 350.0, maxWidth: 300),
       
       width: double.maxFinite,
       child: Center(
         child: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -63,7 +64,7 @@ class AboutMeDesktop extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 200,
+                    width: 150,
                   ),
                   SizedBox(
                     width: 300,
@@ -76,7 +77,7 @@ class AboutMeDesktop extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 20,
+                height: 15,
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -95,8 +96,31 @@ class AboutMeDesktop extends StatelessWidget {
                       )),
                 ),
               ),
+              const SizedBox(height: 16,),
+              const Spacer(),
+              const Padding(
+                padding: EdgeInsets.only(left: 60),
+                child: Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text('See Projects', style: TextStyle(
+                    fontSize: 70,
+                    fontWeight: FontWeight.w800,
+                    shadows: [
+                      Shadow(
+                        offset: Offset(2.0, 2.0),
+                            blurRadius: 1.0,
+                            color: Color.fromARGB(86, 255, 255, 255),
+                      )
+                    ]
+                    
+                    
+                  ),),
+                ),
+              )
             ],
+            
           ),
+          
         ),
       ),
     );

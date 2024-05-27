@@ -14,58 +14,68 @@ class MainDesktop extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
-      height: screenHeight / 1.2,
+      height: screenHeight / 1.6,
       constraints: const BoxConstraints(minHeight: 350.0, maxWidth: 300),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      child: Column(
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              RichText(
-                textAlign: TextAlign.justify,
-                text: const TextSpan(
-                  style: TextStyle(
-                    fontSize: 80,
-                    height: 1.5,
-                    fontWeight: FontWeight.bold,
-                    color: CustomColor.whitePrimary,
-                  ),
-                  children: <TextSpan>[
-                    TextSpan(
-                        text: 'print("Gustavo Westermann")\n',
+          Padding(
+            padding: const EdgeInsets.only(top: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RichText(
+                      textAlign: TextAlign.justify,
+                      text: const TextSpan(
                         style: TextStyle(
-                            fontSize: 15, color: CustomColor.yellowPrimary)),
-                    TextSpan(text: 'Gustavo\n'),
-                    TextSpan(text: 'Westermann'),
+                          fontSize: 80,
+                          height: 1.5,
+                          fontWeight: FontWeight.bold,
+                          color: CustomColor.whitePrimary,
+                        ),
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: 'print("Gustavo Westermann")\n',
+                              style: TextStyle(
+                                  fontSize: 15, color: CustomColor.yellowPrimary)),
+                          TextSpan(text: 'Gustavo\n'),
+                          TextSpan(text: 'Westermann'),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const EbuttonHome(),
                   ],
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const EbuttonHome(),
-            ],
-          ),
-          Container(
-            decoration: const BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromARGB(122, 200, 201, 206), // Cor da sombra
-                  spreadRadius: 5, // Raio de propagação da sombra
-                  blurRadius: 224.95, // Raio de desfoque da sombra
-                  offset: Offset(
-                      0, 3), // Deslocamento da sombra (horizontal, vertical)
-                )
+                Container(
+                  decoration: const BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(122, 200, 201, 206), // Cor da sombra
+                        spreadRadius: 5, // Raio de propagação da sombra
+                        blurRadius: 224.95, // Raio de desfoque da sombra
+                        offset: Offset(
+                            0, 3), // Deslocamento da sombra (horizontal, vertical)
+                      )
+                    ],
+                  ),
+                  child: Image.asset(
+                    "assets/bola_main.png",
+                    width: screenWidth / 2.5,
+                  ),
+                ),
               ],
             ),
-            child: Image.asset(
-              "assets/bola_main.png",
-              width: screenWidth / 2.5,
-            ),
           ),
+         
         ],
       ),
+      
+      
     );
   }
 }
