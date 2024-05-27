@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       title: 'Westermann Portfolio',
-      home: const HomePage(),
+      home: const HomePage(
+      ),
     );
   }
 }

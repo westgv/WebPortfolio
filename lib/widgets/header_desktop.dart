@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_application_1/widgets/west_logo.dart';
-
 import '../constants/colors.dart';
 import '../constants/nav_items.dart';
 import '../styles/style.dart';
 
 class HeaderDesktop extends StatelessWidget {
-  const HeaderDesktop({super.key});
+
+  const HeaderDesktop({
+  super.key, this.onHomeTap, this.onProjectTap});
+  final VoidCallback? onHomeTap;
+   final VoidCallback? onProjectTap;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,14 @@ class HeaderDesktop extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 20),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    
+                      
+              
+                        
+                      
+                        onProjectTap;
+                  },
                   child: Text(navTitles[i], style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,

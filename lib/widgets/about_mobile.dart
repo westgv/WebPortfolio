@@ -101,7 +101,7 @@ class AboutMeMobile extends StatelessWidget {
                 ),
               ),
               
-              const Spacer(),
+              const SizedBox(height: 40,),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Column(

@@ -3,8 +3,15 @@ import 'package:flutter_application_1/widgets/ebuttons_home.dart';
 
 import '../constants/colors.dart';
 
-class MainDesktop extends StatelessWidget {
+class MainDesktop extends StatefulWidget {
   const MainDesktop({super.key});
+
+  @override
+  State<MainDesktop> createState() => _MainDesktopState();
+}
+
+class _MainDesktopState extends State<MainDesktop> {
+  final mainKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +22,7 @@ class MainDesktop extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       height: screenHeight / 1.2,
+      key: mainKey,
       constraints: const BoxConstraints(minHeight: 350.0, maxWidth: 300),
       child: Column(
         children: [

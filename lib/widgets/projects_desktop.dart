@@ -11,24 +11,20 @@ class ProjectsDesktop extends StatefulWidget {
 }
 
 class _ProjectsDesktopState extends State<ProjectsDesktop> {
-  Future<void> _launchURL(String url) async {
-    if (await canLaunchUrl(Uri.parse(url))) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
+  final projectsKey = GlobalKey();
   
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
+    
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       height: screenHeight / 1.5,
       
       child: Column(
+        key: projectsKey,
         children: [
           
           Column(

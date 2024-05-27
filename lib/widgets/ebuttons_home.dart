@@ -26,7 +26,11 @@ class EbuttonHome extends StatelessWidget {
                           
                           backgroundColor: CustomColor.yellowPrimary,
                         ) ,
-                        onPressed: () {},
+                        onPressed: () {
+                          if (e == 0){
+
+                          }
+                        },
                         child: Padding(
                           padding: const EdgeInsets.all(6.0),
                           child: Text(e, style: const TextStyle(
