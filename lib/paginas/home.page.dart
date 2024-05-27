@@ -4,6 +4,7 @@ import 'package:flutter_application_1/widgets/main_desktop.dart';
 import 'package:flutter_application_1/widgets/main_mobile.dart';
 import 'package:flutter_application_1/widgets/projects_desktop.dart';
 import 'package:flutter_application_1/widgets/projects_mobile.dart';
+import 'package:flutter_application_1/widgets/skills_desktop.dart';
 import '../constants/colors.dart';
 import '../constants/size.dart';
 import '../widgets/about_mobile.dart';
@@ -57,11 +58,7 @@ class _HomePageState extends State<HomePage> {
             else
               const ProjectsMobile(),
             //CONTACT
-            Container(
-              height: 500,
-              width: double.maxFinite,
-              color: Colors.blueGrey,
-            ),
+            const SkillsDesktop(),
             //FOOTER
             Container(
               height: 500,
