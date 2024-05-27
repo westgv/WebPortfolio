@@ -14,7 +14,7 @@ class MainDesktop extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
-      height: screenHeight / 1.6,
+      height: screenHeight / 1.2,
       constraints: const BoxConstraints(minHeight: 350.0, maxWidth: 300),
       child: Column(
         children: [
@@ -64,8 +64,8 @@ class MainDesktop extends StatelessWidget {
                     ],
                   ),
                   child: Image.asset(
-                    "assets/bola_main.png",
-                    width: screenWidth / 2.5,
+                    "assets/ImageCircle.png",
+                    width: screenWidth / 3,
                   ),
                 ),
               ],

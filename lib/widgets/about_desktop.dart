@@ -13,7 +13,7 @@ class AboutMeDesktop extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
-      height: screenHeight / 1.6,
+      height: screenHeight / 1.2,
       constraints: const BoxConstraints(minHeight: 350.0, maxWidth: 300),
       
       width: double.maxFinite,
@@ -98,25 +98,25 @@ class AboutMeDesktop extends StatelessWidget {
               ),
               const SizedBox(height: 16,),
               const Spacer(),
-              const Padding(
-                padding: EdgeInsets.only(left: 60),
-                child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Text('See Projects', style: TextStyle(
-                    fontSize: 70,
-                    fontWeight: FontWeight.w800,
-                    shadows: [
-                      Shadow(
-                        offset: Offset(2.0, 2.0),
-                            blurRadius: 1.0,
-                            color: Color.fromARGB(86, 255, 255, 255),
-                      )
-                    ]
-                    
-                    
-                  ),),
-                ),
-              )
+               Align(
+                 alignment: Alignment.bottomCenter,
+                 child: Column(
+                   children: [
+                     const Text('See Projects', style: TextStyle(
+                       fontSize: 70,
+                       fontWeight: FontWeight.w800,
+                       shadows: [
+                         Shadow(
+                           offset: Offset(2.0, 2.0),
+                               blurRadius: 1.0,
+                               color: Color.fromARGB(86, 255, 255, 255),
+                         )
+                       ]
+                     ),),
+                     Image.asset('setas.png', scale: 2.5,)
+                   ],
+                 ),
+               )
             ],
             
           ),

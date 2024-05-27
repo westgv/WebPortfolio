@@ -59,16 +59,16 @@ class _MainMobileState extends State<MainMobile> {
               decoration: const BoxDecoration(
                 boxShadow: [
                   BoxShadow(
-                    color: Color.fromARGB(122, 200, 201, 206), // Cor da sombra
-                    spreadRadius: 5, // Raio de propagação da sombra
-                    blurRadius: 224.95, // Raio de desfoque da sombra
+                    color: Color.fromARGB(122, 200, 201, 206), 
+                    spreadRadius: 5, 
+                    blurRadius: 224.95, 
                     offset: Offset(
-                        0, 3), // Deslocamento da sombra (horizontal, vertical)
+                        0, 3), 
                   )
                 ],
               ),
               child: Image.asset(
-                    "assets/bola_main.png",
+                    "assets/ImageCircle.png",
                     width: screenWidth / 4,
                     )
               

@@ -13,14 +13,14 @@ class AboutMeMobile extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
-      height: screenHeight / 3,
+      height: screenHeight / 1.2,
       
       constraints: const BoxConstraints(minHeight: 350.0, maxWidth: 300),
       
       width: double.maxFinite,
       child: Center(
         child: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -100,6 +100,27 @@ class AboutMeMobile extends StatelessWidget {
                       )),
                 ),
               ),
+              
+              const Spacer(),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Column(
+                  children: [
+                    const Text('See Projects', style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.w800,
+                      shadows: [
+                        Shadow(
+                          offset: Offset(2.0, 2.0),
+                              blurRadius: 1.0,
+                              color: Color.fromARGB(86, 255, 255, 255),
+                        )
+                      ]
+                    ),),
+                    Image.asset('setas.png', scale: 2.5,)
+                  ],
+                ),
+              )
             ],
           ),
         ),

@@ -3,6 +3,7 @@ import 'package:flutter_application_1/widgets/about_desktop.dart';
 import 'package:flutter_application_1/widgets/main_desktop.dart';
 import 'package:flutter_application_1/widgets/main_mobile.dart';
 import 'package:flutter_application_1/widgets/projects_desktop.dart';
+import 'package:flutter_application_1/widgets/projects_mobile.dart';
 import '../constants/colors.dart';
 import '../constants/size.dart';
 import '../widgets/about_mobile.dart';
@@ -51,7 +52,10 @@ class _HomePageState extends State<HomePage> {
             else
               const AboutMeMobile(),
             // PROJECTS
-            const ProjectsDesktop(),
+            if (constraints.maxWidth >= kMinDesktopWidth)
+              const ProjectsDesktop()
+            else
+              const ProjectsMobile(),
             //CONTACT
             Container(
               height: 500,
