@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/colors.dart';
-import 'package:flutter_application_1/constants/url.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectsDesktop extends StatefulWidget {
@@ -11,20 +11,19 @@ class ProjectsDesktop extends StatefulWidget {
 }
 
 class _ProjectsDesktopState extends State<ProjectsDesktop> {
-  final projectsKey = GlobalKey();
+  final projectKey = GlobalKey();
   
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
     
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       height: screenHeight / 1.5,
-      
+      key: projectKey,
       child: Column(
-        key: projectsKey,
+        
         children: [
           
           Column(

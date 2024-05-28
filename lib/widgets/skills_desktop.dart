@@ -10,8 +10,24 @@ class SkillsDesktop extends StatefulWidget {
   State<SkillsDesktop> createState() => _SkillsDesktopState();
 }
 
-class _SkillsDesktopState extends State<SkillsDesktop> {
-  
+class _SkillsDesktopState extends State<SkillsDesktop> with     SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 5),
+      vsync: this,
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -23,55 +39,149 @@ class _SkillsDesktopState extends State<SkillsDesktop> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          const Text("SKILLS", style: TextStyle(
+            fontSize: 60,
+            fontWeight: FontWeight.w800,
+            shadows: [
+                Shadow(
+                  offset: Offset(2.0, 2.0),
+                  blurRadius: 3.0,
+                  color: Color.fromARGB(86, 255, 255, 255),
+                ),
+              ],
+          ),),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CircularPercentIndicator(
-                radius: 60.0,
-                lineWidth: 5.0,
-                percent: 1.0,
-                center: Image.asset('python.png'),
-                progressColor: CustomColor.yellowPrimary,
+              Column(
+                children: [
+                  RotationTransition(
+                    turns: _controller,
+                    child: CircularPercentIndicator(
+                      radius: 60.0,
+                      rotateLinearGradient: true,
+                      lineWidth: 5.0,
+                      percent: 1.0,
+                      center: Image.asset('python.png', scale: 1.5,),
+                      linearGradient: const LinearGradient(colors: <Color>[
+                          CustomColor.yellowSecondary,
+                          CustomColor.yellowPrimary,
+                          CustomColor.yellowSecondary
+                        ]),
+                    ),
+                  ),
+                  const Text("Intermediate", style: TextStyle(fontWeight: FontWeight.w700),)
+                ],
               ),
-              CircularPercentIndicator(
-                radius: 60.0,
-                lineWidth: 5.0,
-                percent: 1.0,
-                center: Image.asset('java.png'),
-                progressColor: CustomColor.yellowPrimary,
+              Column(
+                children: [
+                  RotationTransition(
+                    turns: _controller,
+                    child: CircularPercentIndicator(
+                      radius: 60.0,
+                      lineWidth: 5.0,
+                      percent: 1.0,
+                      center: Image.asset('java.png'),
+                      rotateLinearGradient: true,
+                      linearGradient: const LinearGradient(colors: <Color>[
+                          CustomColor.yellowSecondary,
+                          CustomColor.yellowPrimary,
+                          CustomColor.yellowSecondary
+                        ]),
+                    ),
+                  ),
+                  const Text("Intermediate", style: TextStyle(fontWeight: FontWeight.w700),)
+                ],
               ),
-              CircularPercentIndicator(
-                radius: 60.0,
-                lineWidth: 5.0,
-                percent: 1.0,
-                center: Image.asset('flutter.png'),
-                progressColor: CustomColor.yellowPrimary,
+              Column(
+                children: [
+                  RotationTransition(
+                    turns: _controller,
+                    child: CircularPercentIndicator(
+                      radius: 60.0,
+                      lineWidth: 5.0,
+                      percent: 1.0,
+                      center: Image.asset('flutter.png', scale: 1.5,),
+                      rotateLinearGradient: true,
+                      linearGradient: const LinearGradient(colors: <Color>[
+                            CustomColor.yellowSecondary,
+                            CustomColor.yellowPrimary,
+                            CustomColor.yellowSecondary
+                          ]),
+                    ),
+                  ),
+                  const Text("Intermediate", style: TextStyle(fontWeight: FontWeight.w700),)
+                ],
               )
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CircularPercentIndicator(
-                radius: 60.0,
-                lineWidth: 5.0,
-                percent: 1.0,
-                center: Image.asset('html.png'),
-                progressColor: CustomColor.yellowPrimary,
+              Column(
+                
+                children: [
+                  RotationTransition(
+                    turns: _controller,
+                    child: CircularPercentIndicator(
+                      radius: 60.0,
+                      rotateLinearGradient: true,
+                      linearGradient: const LinearGradient(colors: <Color>[
+                        CustomColor.yellowSecondary,
+                        CustomColor.yellowPrimary,
+                        CustomColor.yellowSecondary
+                      ]),
+                      lineWidth: 5.0,
+                      percent: 1.0,
+                      center: Image.asset('html.png', scale: 1.5,),
+                      // progressColor: CustomColor.yellowPrimary,
+                    ),
+                  ),
+                  
+                  const Text("Intermediário", style: TextStyle(fontWeight: FontWeight.w700),)
+                ],
               ),
-              CircularPercentIndicator(
-                radius: 60.0,
-                lineWidth: 5.0,
-                percent: 1.0,
-                center: Image.asset('css.png'),
-                progressColor: CustomColor.yellowPrimary,
+              Column(
+                children: [
+                  RotationTransition(
+                    turns: _controller,
+                    child: CircularPercentIndicator(
+                      radius: 60.0,
+                      backgroundColor: Colors.transparent,
+                      rotateLinearGradient: true,
+                      linearGradient: const LinearGradient(colors: <Color>[
+                        CustomColor.yellowSecondary,
+                        CustomColor.yellowPrimary,
+                        CustomColor.yellowSecondary
+                      ]),
+                      lineWidth: 5.0,
+                      percent: 1.0,
+                      center: Image.asset('css.png', scale: 1.5 ,),
+                      
+                    ),
+                  ),
+                  const Text("Intermediate", style: TextStyle(fontWeight: FontWeight.w700),)
+                ],
               ),
-              CircularPercentIndicator(
-                radius: 60.0,
-                lineWidth: 5.0,
-                percent: 1.0,
-                center: Image.asset('javascript.png'),
-                progressColor: CustomColor.yellowPrimary,
+              Column(
+                children: [
+                  RotationTransition(
+                    turns: _controller,
+                    child: CircularPercentIndicator(
+                      radius: 60.0,
+                      linearGradient: const LinearGradient(colors: <Color>[
+                            CustomColor.yellowSecondary,
+                            CustomColor.yellowPrimary,
+                            CustomColor.yellowSecondary
+                          ]),
+                      lineWidth: 5.0,
+                      percent: 1.0,
+                      center: Image.asset('javascript.png', scale: 1.5,),
+                      rotateLinearGradient: true,
+                    ),
+                  ),
+                  const Text("Intermediate", style: TextStyle(fontWeight: FontWeight.w700),)
+                ],
               )
             ],
           )

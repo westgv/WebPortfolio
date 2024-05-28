@@ -74,15 +74,16 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.only(right: 20),
                     child: TextButton(
                       onPressed: () {
+                        print(i);
                       switch(i){
                         case 0 :
                           scrollToMain();
                           break;
                         case 1 :
-                          scrollToSkills();
+                          scrollToProject();
                           break;
                         case 2 : 
-                          scrollToProject();
+                          scrollToSkills();
                           break;
                         case 3 :
                           scrollToMain();
@@ -122,8 +123,7 @@ class _HomePageState extends State<HomePage> {
             // PROJECTS
             if (constraints.maxWidth >= kMinDesktopWidth)
                ProjectsDesktop(
-                key: projectKey,
-              )
+                key: projectKey)
             else
               const ProjectsMobile(),
             //CONTACT

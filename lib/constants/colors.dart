@@ -11,3 +11,9 @@ class CustomColor {
   static const Color whitePrimary = Color(0xffEAEAEB);
   static const Color whiteSecondary = Color(0xffC8C9CE);
 }
+
+List<Color> kGradient = [
+  CustomColor.yellowSecondary,
+  CustomColor.yellowPrimary,
+  CustomColor.yellowSecondary
+];
