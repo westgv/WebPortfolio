@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widgets/about_desktop.dart';
+import 'package:flutter_application_1/widgets/header_desktop.dart';
 import 'package:flutter_application_1/widgets/main_desktop.dart';
 import 'package:flutter_application_1/widgets/main_mobile.dart';
 import 'package:flutter_application_1/widgets/projects_desktop.dart';
 import 'package:flutter_application_1/widgets/projects_mobile.dart';
 import 'package:flutter_application_1/widgets/skills_desktop.dart';
+import 'package:flutter_application_1/widgets/skills_mobile.dart';
 import '../constants/colors.dart';
 import '../constants/nav_items.dart';
 import '../constants/size.dart';
@@ -23,7 +25,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final mainKey = GlobalKey();
   final projectKey = GlobalKey();
@@ -32,20 +33,23 @@ class _HomePageState extends State<HomePage> {
   Future scrollToMain() async {
     final context = mainKey.currentContext;
     await Scrollable.ensureVisible(context!,
-    duration: const Duration(milliseconds: 1500));
-  }
-  
-  Future scrollToProject() async {
-    final context = projectKey.currentContext;
-    await Scrollable.ensureVisible(context!,
-    duration: const Duration(milliseconds: 1500));
+        duration: const Duration(milliseconds: 1500));
   }
 
-  Future scrollToSkills() async{
-    final context = skillsKey.currentContext;
-     Scrollable.ensureVisible(context!,
-    duration: const Duration(milliseconds: 1500));
+  Future<void> scrollToProject() async {
+    final context = projectKey.currentContext;
+    if (context != null) {
+      await Scrollable.ensureVisible(context,
+          duration: const Duration(milliseconds: 1500));
+    }
   }
+
+  Future scrollToSkills() async {
+    final context = skillsKey.currentContext;
+    Scrollable.ensureVisible(context!,
+        duration: const Duration(milliseconds: 1500));
+  }
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
@@ -59,58 +63,60 @@ class _HomePageState extends State<HomePage> {
           scrollDirection: Axis.vertical,
           children: [
             // MAIN
-            constraints.maxWidth >= kMinDesktopWidth?
-              Container(
-                height: 60.0,
-                margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                width: double.maxFinite,
-                decoration: kHeaderDecoration,
-                child: Row(children: [
-                  WestLogo(onTap: () {}
-                  ),
-                  const Spacer(),
-                  for(int i=0; i< navTitles.length; i++ )
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: TextButton(
-                      onPressed: () {
-                        print(i);
-                      switch(i){
-                        case 0 :
-                          scrollToMain();
-                          break;
-                        case 1 :
-                          scrollToProject();
-                          break;
-                        case 2 : 
-                          scrollToSkills();
-                          break;
-                        case 3 :
-                          scrollToMain();
-                          break;
-                        default:
-                          scrollToMain();
-                          break;
-                      }
-                      },
-                      child: Text(navTitles[i], style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: CustomColor.whitePrimary,
-                      )),
+            constraints.maxWidth >= kMinDesktopWidth
+                ? Container(
+                    height: 60.0,
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 20.0),
+                    width: double.maxFinite,
+                    decoration: kHeaderDecoration,
+                    child: Row(
+                      children: [
+                        WestLogo(onTap: () {}),
+                        const Spacer(),
+                        for (int i = 0; i < navTitles.length; i++)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 20),
+                            child: TextButton(
+                              onPressed: () {
+                                print(i);
+                                switch (i) {
+                                  case 0:
+                                    scrollToMain();
+                                    break;
+                                  case 1:
+                                    scrollToProject();
+                                    break;
+                                  case 2:
+                                    scrollToSkills();
+                                    break;
+                                  case 3:
+                                    scrollToMain();
+                                    break;
+                                  default:
+                                    scrollToMain();
+                                    break;
+                                }
+                              },
+                              child: Text(navTitles[i],
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                    color: CustomColor.whitePrimary,
+                                  )),
+                            ),
+                          )
+                      ],
                     ),
                   )
-                ],),
-              ) 
-              :
-              HeaderMobile(
-                onLogoTap: () {},
-                onMenuTap: () {
-                  scaffoldKey.currentState?.openEndDrawer();
-                },
-              ),
+                : HeaderMobile(
+                    onLogoTap: () {},
+                    onMenuTap: () {
+                      scaffoldKey.currentState?.openEndDrawer();
+                    },
+                  ),
             if (constraints.maxWidth >= kMinDesktopWidth)
-               MainDesktop(
+              MainDesktop(
                 key: mainKey,
               )
             else
@@ -122,14 +128,18 @@ class _HomePageState extends State<HomePage> {
               const AboutMeMobile(),
             // PROJECTS
             if (constraints.maxWidth >= kMinDesktopWidth)
-               ProjectsDesktop(
-                key: projectKey)
+              ProjectsDesktop(key: projectKey)
             else
               const ProjectsMobile(),
             //CONTACT
-            SkillsDesktop(
-              key: skillsKey,
-            ),
+            if (constraints.maxWidth >= kMinDesktopWidth)
+              SkillsDesktop(
+                key: skillsKey,
+              )
+            else 
+              const SkillsMobile(),
+              
+            
             //FOOTER
             Container(
               height: 500,

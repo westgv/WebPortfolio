@@ -28,12 +28,7 @@ class HeaderDesktop extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 20),
                 child: TextButton(
                   onPressed: () {
-                    
-                      
-              
-                        
-                      
-                        onProjectTap;
+
                   },
                   child: Text(navTitles[i], style: const TextStyle(
                     fontSize: 16,

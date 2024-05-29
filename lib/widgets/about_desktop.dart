@@ -13,29 +13,26 @@ class AboutMeDesktop extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
-      height: screenHeight / 1.2,
+      height: screenHeight / 1.1,
       constraints: const BoxConstraints(minHeight: 350.0, maxWidth: 300),
-      
       width: double.maxFinite,
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
-            
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
                     child: Row(
-                      
                       children: [
-                        
                         Text(
                           'Hello ',
-                          style: TextStyle(fontSize: 60,),
+                          style: TextStyle(
+                            fontSize: 60,
+                          ),
                         ),
                         Icon(
                           Icons.waving_hand_rounded,
@@ -45,7 +42,6 @@ class AboutMeDesktop extends StatelessWidget {
                       ],
                     ),
                   ),
-                 
                 ],
               ),
               const SizedBox(
@@ -96,31 +92,36 @@ class AboutMeDesktop extends StatelessWidget {
                       )),
                 ),
               ),
-              const SizedBox(height: 16,),
+              const SizedBox(
+                height: 16,
+              ),
               const Spacer(),
-               Align(
-                 alignment: Alignment.bottomCenter,
-                 child: Column(
-                   children: [
-                     const Text('See Projects', style: TextStyle(
-                       fontSize: 70,
-                       fontWeight: FontWeight.w800,
-                       shadows: [
-                         Shadow(
-                           offset: Offset(2.0, 2.0),
-                               blurRadius: 1.0,
-                               color: Color.fromARGB(86, 255, 255, 255),
-                         )
-                       ]
-                     ),),
-                     Image.asset('setas.png', scale: 2.5,)
-                   ],
-                 ),
-               )
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Column(
+                  children: [
+                    const Text(
+                      'See Projects',
+                      style: TextStyle(
+                          fontSize: 70,
+                          fontWeight: FontWeight.w800,
+                          shadows: [
+                            Shadow(
+                              offset: Offset(2.0, 2.0),
+                              blurRadius: 1.0,
+                              color: Color.fromARGB(86, 255, 255, 255),
+                            )
+                          ]),
+                    ),
+                    Image.asset(
+                      'setas.png',
+                      scale: 2.5,
+                    )
+                  ],
+                ),
+              )
             ],
-            
           ),
-          
         ),
       ),
     );
